@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane 
+    id="grid" 
+    prefHeight="200.0" 
+    prefWidth="600.0" 
+    xmlns:fx="http://javafx.com/fxml/1"
+    alignment="CENTER"
+    fx:controller="geoconversor.controller.AppController">
+    
+    <VBox 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="0"  >
+        <Label text="Convert from UTM"/>
+    
+        <HBox > 
+            <Label text="Sector"/>
+            <TextField fx:id="tfSector"/>        
+        </HBox>
+    
+        <HBox >        
+            <Label text="North"/>
+            <TextField fx:id="tfNorth"/>
+        </HBox>  
+        <HBox >
+            <Label text="East"/>
+            <TextField />            
+        </HBox>    
+        <ButtonBar >
+                <buttons>
+                    <Button 
+                        text="Convert"
+                        onAction="#convertUTM">
+                    </Button>
+                    <Button text="Clear"></Button>
+                </buttons>
+            </ButtonBar>
+    </VBox>
+    <VBox 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="0"  
+    >
+        <Label         
+            text="Convert from decimal degrees"/>
+    
+        <HBox > 
+            <Label text="Latitude"/>
+            <TextField fx:id="tfLat"/>        
+        </HBox>
+    
+        <HBox> 
+            <Label text="Longitude"/>
+            <TextField fx:id="tfLon"/>
+        </HBox>
+        <ButtonBar >
+            <buttons>
+                <Button 
+                    text="Convert"
+                    onAction="#convertDec">
+                </Button>
+                <Button 
+                    text="Clear">
+                </Button>
+            </buttons>
+        </ButtonBar>
+     
+        
+    </VBox>
+    <VBox 
+        GridPane.columnIndex="2"
+        GridPane.rowIndex="0"  
+    >
+        
+        <ButtonBar >
+            <buttons>
+                <Button text="Convert"></Button>
+                <Button text="Clear"></Button>
+            </buttons>
+        </ButtonBar>        
+    </VBox>
+                   
+</GridPane>

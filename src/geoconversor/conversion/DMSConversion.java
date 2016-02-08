@@ -3,56 +3,69 @@ package geoconversor.conversion;
 import java.util.ArrayList;
 
 public class DMSConversion {
-    public void ConversaoGMS(){
+    String formatPrecision = "%.5f";
+    public void DMSConversion(){
 
     }
-
-    public String converteGraus(double graus) {
-        double aux, aux2, grau, min, seg;
-        grau = (long) graus;
-        aux =  ((graus - grau)*60);
+    public String convertFromDegrees(double degrees) {
+        double aux, aux2, deg, min, sec;
+        deg = (long) degrees;
+        aux =  ((degrees - deg)*60);
         min = (long) aux;
         aux2 =  (aux - min)*60;
-        seg = (long) aux2;
-        if(seg>=60){
+        sec = (long) aux2;
+        if(sec>=60){
             min=min+1;
-            seg=seg-60.;
+            sec=sec-60.;
         }
         if(min>=60){
-            grau=grau+1;
+            deg=deg+1;
             min=min-60.;
         }
-        return doubleToStr(grau, min, seg);
+        return doubleToStr(deg, min, sec);
     }
-
-    public String grausConverte(boolean positivo, double grau, double min, double seg) {
-        min = min + (seg/60);
-        grau = grau + (min/60);
-        if(!positivo) {
-            grau = grau*-1;
+    
+    public String convertToDegrees(boolean positive, String degrees, String min, String seg) {
+        double deg = Double.parseDouble(degrees);
+        double minutes = Double.parseDouble(min);
+        double seconds = Double.parseDouble(seg);
+        minutes = minutes + (seconds/60);
+        deg = deg + (minutes/60);
+        if(!positive) {
+            deg *=-1;
         }
-        return doubleToStr(grau);
+        return doubleToStr(deg);
     }
 
-    public String doubleToStr(double graus) {
-        return String.format("%.5f",graus);
+    public String convertToDegrees(boolean positive, double degrees, double min, double seg) {
+        min = min + (seg/60);
+        degrees = degrees + (min/60);
+        if(!positive) {
+            degrees *=-1;
+        }
+        return doubleToStr(degrees);
     }
-    public String doubleToStr(double grau, double min, double seg){
-        //aprimorar procedimento, formatar no padrao que vai receber no edittext
-        String aux1,aux2,aux3;
-        if(grau<0){grau=grau*-1;}
-        if(min<0){min=min*-1;}
-        if(seg<0){seg=seg*-1;}
-        aux1 = String.format("%.0f",grau);
-        aux2 = String.format("%.0f",min);
-        aux3 = String.format("%.0f",seg);
+
+    public String doubleToStr(double degrees) {
+        String result = String.format(formatPrecision, degrees);
+        result = result.replace(",", ".");
+        return result;
+    }
+    public String doubleToStr(double deg, double min, double sec){        
+        String aux1,aux2,aux3;        
+        if(deg<0){deg*=-1;}
+        if(min<0){min*=-1;}
+        if(sec<0){sec*=-1;}       
+        aux1 = String.format("%.0f",deg);        
+        aux2 = String.format("%.0f",min);        
+        aux3 = String.format("%.0f",sec);
         return (aux1+" "+aux2+ " "+aux3);
     }
-    public ArrayList<String> conversaoGraus(double lat, double lon) {
-        ArrayList<String> arrayList = new ArrayList<String>();
+    public ArrayList<String> DegreesConversion(double lat, double lon) {
+        ArrayList<String> arrayList = new ArrayList<>();
         DMSConversion cg = new DMSConversion();
-        String strLat = cg.converteGraus(lat);
-        String strLon = cg.converteGraus(lon);
+        String strLat = cg.convertFromDegrees(lat);
+        String strLon = cg.convertFromDegrees(lon);
         String coordLat[] = strLat.split(" ");
         String coordLon[] = strLon.split(" ");
         arrayList.add(coordLat[0]);
@@ -62,51 +75,6 @@ public class DMSConversion {
         arrayList.add(coordLon[1]);
         arrayList.add(coordLon[2]);
         return arrayList;
-    }
-
-    public int validacao(double latitude, double longitude){
-        if (latitude <= -90.0 || latitude >= 90.0) {
-            return 1;
-        }
-        if(longitude <= -180.0 || longitude >= 180.0)
-        {
-            return 2;
-        }
-        return 0;
-    }
-
-    public int validacao (String setor, String norte, String leste){
-        //fazer validacao para setor
-        if(Double.parseDouble(norte) <0 || Double.parseDouble(norte) >10000000){
-            return 2;
-         }
-        if(Double.parseDouble(leste) <160000 || Double.parseDouble(leste) >834000){
-            return 3;
-        }
-        return 0;
-    }
-
-    public int validacao(String latgrau, String latmin, String latseg,
-                         String longrau, String lonmin, String lonseg ){
-        if(Double.parseDouble(latgrau) >90 || Double.parseDouble(latgrau) <-90){
-            return 1;
-        }
-        if (Double.parseDouble(longrau) > 180 || Double.parseDouble(longrau) < -180) {
-            return 2;
-        }
-        if (Double.parseDouble(latmin) >= 60 || Double.parseDouble(latmin) < 0) {
-            return 3;
-        }
-        if (Double.parseDouble(lonmin) >= 60 || Double.parseDouble(lonmin) < 0) {
-            return 4;
-        }
-        if (Double.parseDouble(latseg) >= 60 || Double.parseDouble(latseg) < 0) {
-            return 5;
-        }
-        if (Double.parseDouble(lonseg) >= 60 || Double.parseDouble(lonseg) < 0) {
-            return 6;
-        }
-        return 0;
-    }
+    }    
     
 }

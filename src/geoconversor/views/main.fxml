@@ -1,88 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane 
-    id="grid" 
-    prefHeight="200.0" 
-    prefWidth="600.0" 
+<GridPane
+    id="grid"
+    prefHeight="200.0"
+    prefWidth="800.0"
     xmlns:fx="http://javafx.com/fxml/1"
     alignment="CENTER"
-    fx:controller="geoconversor.controller.AppController">
-    
-    <VBox 
+    fx:controller="geoconversor.controller.AppController"
+>
+    <stylesheets>
+        <URL value="@AppStyleSheet.css" />
+    </stylesheets>
+
+    <VBox
         GridPane.columnIndex="0"
         GridPane.rowIndex="0"  >
-        <Label text="Convert from UTM"/>
-    
-        <HBox > 
-            <Label text="Sector"/>
-            <TextField fx:id="tfSector"/>        
-        </HBox>
-    
-        <HBox >        
-            <Label text="North"/>
-            <TextField fx:id="tfNorth"/>
-        </HBox>  
-        <HBox >
-            <Label text="East"/>
-            <TextField />            
-        </HBox>    
-        <ButtonBar >
-                <buttons>
-                    <Button 
-                        text="Convert"
-                        onAction="#convertUTM">
-                    </Button>
-                    <Button text="Clear"></Button>
-                </buttons>
-            </ButtonBar>
-    </VBox>
-    <VBox 
-        GridPane.columnIndex="1"
-        GridPane.rowIndex="0"  
-    >
-        <Label         
-            text="Convert from decimal degrees"/>
-    
-        <HBox > 
-            <Label text="Latitude"/>
-            <TextField fx:id="tfLat"/>        
-        </HBox>
-    
-        <HBox> 
-            <Label text="Longitude"/>
-            <TextField fx:id="tfLon"/>
-        </HBox>
         <ButtonBar >
             <buttons>
-                <Button 
-                    text="Convert"
+                <Button
+                    text="Convert from UTM"
+                    onAction="#convertUTM">
+                </Button>                
+            </buttons>
+        </ButtonBar>
+        <Label text="Sector"/>
+        <TextField fx:id="tfSector"/>
+        <Label text="North"/>
+        <TextField fx:id="tfNorth"/>
+        <Label text="East"/>
+        <TextField fx:id="tfEast"/>
+    </VBox>
+    <VBox
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="0"
+    >
+        <ButtonBar >
+            <buttons>
+                <Button
+                    text="Convert from decimal degrees"
                     onAction="#convertDec">
-                </Button>
-                <Button 
-                    text="Clear">
+                </Button>                
+            </buttons>
+        </ButtonBar>
+        <Label text="Latitude"/>
+        <TextField fx:id="tfLatitude"/>
+        <Label text="Longitude"/>
+        <TextField fx:id="tfLongitude"/>
+    </VBox>
+    <VBox
+        GridPane.columnIndex="2"
+        GridPane.rowIndex="0"
+    >
+        <ButtonBar
+        >
+            <buttons>
+                <Button text="Convert from deg, min and sec"
+                        onAction="#convertDMS">
                 </Button>
             </buttons>
         </ButtonBar>
-     
-        
+        <HBox >
+            <Label text="Latitude"/>
+            <fx:define>
+                <ToggleGroup fx:id="groupLatitude"/>
+            </fx:define>
+            <RadioButton 
+                text="N"
+                toggleGroup="$groupLatitude"
+                selected="true" >
+                
+            </RadioButton>
+            <RadioButton 
+                text="S" 
+                toggleGroup="$groupLatitude">
+                
+            </RadioButton>
+        </HBox>        
+        <HBox >        
+            <TextField
+                fx:id="tfLatDeg"
+                prefWidth="60" />
+            <Label text="º"/>
+            <TextField
+                fx:id="tfLatMin"
+                prefWidth="60"/>
+            <Label text="'" />
+            <TextField
+                fx:id="tfLatSec"
+                prefWidth="60"/>
+            <Label text="''"/>
+        </HBox>
+        <HBox >
+            <Label text="Longitude"/>
+            <fx:define>
+                <ToggleGroup fx:id="groupLongitude"/>
+            </fx:define>
+            <RadioButton 
+                text="E"
+                toggleGroup="$groupLongitude"
+                selected="true" >
+                
+            </RadioButton>
+            <RadioButton 
+                text="W" 
+                toggleGroup="$groupLongitude">
+                
+            </RadioButton>
+        </HBox>        
+        <HBox >           
+            <TextField
+                fx:id="tfLonDeg"
+                prefWidth="60"/>
+            <Label text="º"/>
+            <TextField
+                fx:id="tfLonMin"
+                prefWidth="60"/>
+            <Label text="'" />
+            <TextField
+                fx:id="tfLonSec"
+                prefWidth="60"/>
+            <Label text="''"/>
+        </HBox>
     </VBox>
-    <VBox 
-        GridPane.columnIndex="2"
-        GridPane.rowIndex="0"  
-    >
-        
-        <ButtonBar >
-            <buttons>
-                <Button text="Convert"></Button>
-                <Button text="Clear"></Button>
-            </buttons>
-        </ButtonBar>        
-    </VBox>
-                   
 </GridPane>

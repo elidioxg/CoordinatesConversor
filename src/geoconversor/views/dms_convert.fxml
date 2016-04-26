@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane 
+    id="AnchorPane" 
+    prefHeight="300.0" 
+    prefWidth="300.0" 
+    styleClass="mainFxmlClass" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="geoconversor.controller.Dms_convertController">
+    <stylesheets>
+        <URL value="@AppStyleSheet.css"/>
+    </stylesheets>
+    
+    <VBox >
+        <ButtonBar
+        >
+            <buttons>
+                <Button text="Convert from deg, min and sec"
+                        onAction="#convertDMS">
+                </Button>
+            </buttons>
+        </ButtonBar>
+        <HBox >
+            <Label text="Latitude"/>
+            <fx:define>
+                <ToggleGroup fx:id="groupLatitude"/>
+            </fx:define>
+            <RadioButton 
+                fx:id="rbLatitude"
+                text="N"
+                toggleGroup="$groupLatitude"
+                selected="true" >
+                
+            </RadioButton>
+            <RadioButton 
+                text="S" 
+                toggleGroup="$groupLatitude">
+                
+            </RadioButton>
+        </HBox>        
+        <HBox >        
+            <TextField
+                fx:id="tfLatDeg"
+                prefWidth="60" />
+            <Label text="º"/>
+            <TextField
+                fx:id="tfLatMin"
+                prefWidth="60"/>
+            <Label text="'" />
+            <TextField
+                fx:id="tfLatSec"
+                prefWidth="60"/>
+            <Label text="''"/>
+        </HBox>
+        <HBox >
+            <Label text="Longitude"/>
+            <fx:define>
+                <ToggleGroup fx:id="groupLongitude"/>
+            </fx:define>
+            <RadioButton 
+                fx:id="rbLongitude"
+                text="E"
+                toggleGroup="$groupLongitude"
+                selected="true" >
+                
+            </RadioButton>
+            <RadioButton 
+                text="W" 
+                toggleGroup="$groupLongitude">
+                
+            </RadioButton>
+        </HBox>        
+        <HBox >           
+            <TextField
+                fx:id="tfLonDeg"
+                prefWidth="60"/>
+            <Label text="º"/>
+            <TextField
+                fx:id="tfLonMin"
+                prefWidth="60"/>
+            <Label text="'" />
+            <TextField
+                fx:id="tfLonSec"
+                prefWidth="60"/>
+            <Label text="''"/>
+        </HBox>
+    </VBox>    
+</AnchorPane>

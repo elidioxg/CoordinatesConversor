@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    id="AnchorPane" 
+    prefHeight="300.0" 
+    prefWidth="300.0" 
+>
+    
+    <VBox >
+        <VBox >
+            <HBox >
+                <Label text="Latitude: "/>
+                <Label fx:id="in_latitude"/>  
+            </HBox> 
+    
+            <HBox >
+                <Label text="Longitude: "/>
+                <Label fx:id="in_longitude"/>
+            </HBox>
+        </VBox>
+        
+        <VBox >
+            <HBox >
+                <Label text="Sector: "/>
+                <Label fx:id="in_sector"/>
+            </HBox>
+            <HBox >
+                <Label text="North: "/>
+                <Label fx:id="in_north"/>
+            </HBox>
+            <HBox >
+                <Label text="East"/>
+                <Label fx:id="in_east"/>
+            </HBox>
+        </VBox>
+        
+        <VBox >
+            <HBox >
+                <Label text="Latitude: "/>
+                <Label fx:id="in_latdms"/>
+            </HBox>
+            <HBox >
+                <Label text="Longitude: "/>
+                <Label fx:id="in_londms"/>
+            </HBox>
+        </VBox>
+    
+    </VBox>
+    
+    
+</AnchorPane>

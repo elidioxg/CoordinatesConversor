@@ -14,19 +14,13 @@
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.Dms_convertController">
+    
     <stylesheets>
         <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
     <VBox >
-        <ButtonBar
-        >
-            <buttons>
-                <Button text="Convert from deg, min and sec"
-                        onAction="#convertDMS">
-                </Button>
-            </buttons>
-        </ButtonBar>
+        
         <HBox >
             <Label text="Latitude"/>
             <fx:define>
@@ -91,5 +85,13 @@
                 prefWidth="60"/>
             <Label text="''"/>
         </HBox>
+        <ButtonBar
+        >
+            <buttons>
+                <Button text="Convert"
+                        onAction="#convertDMS">
+                </Button>
+            </buttons>
+        </ButtonBar>
     </VBox>    
 </AnchorPane>

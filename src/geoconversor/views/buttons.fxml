@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox
+    id="AnchorPane" 
+    prefHeight="100.0" 
+    prefWidth="600.0" 
+    styleClass="mainFxmlClass" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="geoconversor.controller.AppController">
+    
+    <stylesheets>
+        <URL value="@AppStyleSheet.css"/>
+    </stylesheets>
+    
+    <ButtonBar  >
+        <buttons>
+            <Button text="CSV"/> 
+            <Button text="KML"/>
+            <Button text="Delete"/>
+        </buttons>
+    </ButtonBar>
+    
+</HBox>

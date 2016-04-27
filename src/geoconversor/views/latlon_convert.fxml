@@ -19,17 +19,19 @@
     </stylesheets>
     
     <VBox >
-        <ButtonBar >
-            <buttons>
-                <Button
-                    text="Convert from decimal degrees"
-                    onAction="#convertDec">
-                </Button>                
-            </buttons>
-        </ButtonBar>
+        
         <Label text="Latitude"/>
         <TextField fx:id="tfLatitude"/>
         <Label text="Longitude"/>
         <TextField fx:id="tfLongitude"/>
+        
+        <ButtonBar >
+            <buttons>
+                <Button
+                    text="Convert"
+                    onAction="#convertDec">
+                </Button>                
+            </buttons>
+        </ButtonBar>
     </VBox>
 </AnchorPane>

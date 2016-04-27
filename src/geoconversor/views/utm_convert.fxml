@@ -19,19 +19,20 @@
     </stylesheets>
     
     <VBox >
-        <ButtonBar >
-            <buttons>
-                <Button
-                    text="Convert from UTM"
-                    onAction="#convertUTM">
-                </Button>                
-            </buttons>
-        </ButtonBar>
+        
         <Label text="Sector"/>
         <TextField fx:id="tfSector"/>
         <Label text="North"/>
         <TextField fx:id="tfNorth"/>
         <Label text="East"/>
         <TextField fx:id="tfEast"/>
+        <ButtonBar >
+            <buttons>
+                <Button
+                    text="Convert"
+                    onAction="#convertUTM">
+                </Button>                
+            </buttons>
+        </ButtonBar>
     </VBox>
 </AnchorPane>

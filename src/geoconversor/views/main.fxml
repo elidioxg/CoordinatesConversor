@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane
-    xmlns:fx="http://javafx.com/fxml/1" 
+    xmlns:fx="http://javafx.com/fxml/1"
     id="grid"
     prefHeight="400.0"
     prefWidth="1000.0"
@@ -17,18 +17,7 @@
 >
     <stylesheets>
         <URL value="@AppStyleSheet.css" />
-    </stylesheets>
-    
-    <ScrollPane 
-        GridPane.columnIndex="0"                
-        GridPane.rowIndex="0"
-        GridPane.rowSpan="3">
-        
-        <content >
-            <fx:include source="list.fxml"/>
-        </content>
-        
-    </ScrollPane>   
+    </stylesheets>       
     
     <ScrollPane 
         GridPane.columnIndex="1" 
@@ -41,29 +30,37 @@
 
     </ScrollPane> 
 
-    <ScrollPane 
+    <VBox
         GridPane.columnIndex="2"
         GridPane.rowIndex="0">
+                
+        <fx:include source="utm_convert.fxml"/>
         
-        <content >
-            <fx:include source="utm_convert.fxml"/>
-        </content>
-    </ScrollPane>  
+    </VBox>  
     
-    <ScrollPane 
+    <VBox
         GridPane.columnIndex="3"
         GridPane.rowIndex="0">        
-        <content >
-            <fx:include source="latlon_convert.fxml"/>
-        </content>
-    </ScrollPane>  
+        
+        <fx:include source="latlon_convert.fxml"/>
+        
+    </VBox>  
     
-    <ScrollPane 
+    <VBox
         GridPane.columnIndex="4"
         GridPane.rowIndex="0">        
-        <content >
-            <fx:include source="dms_convert.fxml"/>
-        </content>
-    </ScrollPane>                 
+        
+        <fx:include source="dms_convert.fxml"/>
+        
+    </VBox> 
+    
+    <HBox 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="4"
+        GridPane.columnSpan="5">
+        
+        <fx:include source="buttons.fxml"/>
+        
+    </HBox>                
     
 </GridPane>

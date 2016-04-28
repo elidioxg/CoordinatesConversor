@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 exg
+ * Copyright (C) 2016 elidioxg
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,31 @@
  */
 package geoconversor.controller;
 
+import geoconversor.Models.PointModel;
 import static geoconversor.conversion.Convert.convert;
 import geoconversor.conversion.DMSConversion;
+import geoconversor.conversion.ShowConversion;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author exg
+ * @author elidioxg
  */
 public class Dms_convertController implements Initializable {
         
+    private final String formatPrecision=".5f";
     @FXML protected TextField tfLatDeg;
     @FXML protected TextField tfLatMin;
     @FXML protected TextField tfLatSec;
@@ -70,7 +77,12 @@ public class Dms_convertController implements Initializable {
         }
         List list = new ArrayList<>();
         list = convert(latSignal,latDeg, latMin, latSec, lonSignal,lonDeg, lonMin, lonSec);        
-        //tfLatitude.setText(list.get(0).toString());       
-        //tfLongitude.setText(list.get(1).toString());
+        
+        PointModel pm = new PointModel();
+        pm.setLatidude(String.format(formatPrecision, list.get(0)));
+        pm.setLongitude(String.format(formatPrecision, list.get(0)));
+        
+        ShowConversion show = new ShowConversion();
+        show.createStage(pm);       
     }
 }

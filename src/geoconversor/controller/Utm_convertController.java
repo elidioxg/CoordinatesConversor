@@ -16,7 +16,9 @@
  */
 package geoconversor.controller;
 
+import geoconversor.Models.PointModel;
 import static geoconversor.conversion.Convert.convert;
+import geoconversor.conversion.ShowConversion;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -30,6 +32,7 @@ import javafx.scene.control.TextField;
  */
 public class Utm_convertController implements Initializable {
 
+    private final String formatString = "%.5f";
     @FXML protected TextField tfSector;
     @FXML protected TextField tfNorth;
     @FXML protected TextField tfEast;
@@ -47,9 +50,18 @@ public class Utm_convertController implements Initializable {
         String strSector  = tfSector.getCharacters().toString();        
         String strNorth = tfNorth.getCharacters().toString().trim();
         String strEast = tfEast.getCharacters().toString().trim();
-        double latlon[] = convert(strSector, strNorth,strEast);               
-        //tfLatitude.setText(String.format(" %.4f", latlon[0]));
-        //tfLongitude.setText(String.format(" %.4f", latlon[1]));
+        double latlon[] = convert(strSector, strNorth,strEast); 
+        
+        PointModel pm = new PointModel();
+        pm.setLatidude(String.format(formatString, latlon[0]));
+        pm.setLongitude(String.format(formatString, latlon[1]));
+        pm.setSector(strSector);
+        pm.setNorth(strNorth);
+        pm.setEast(strEast);
+               
+        ShowConversion show = new ShowConversion();
+        show.createStage(pm);
+        
     }
     
 }

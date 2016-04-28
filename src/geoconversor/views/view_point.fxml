@@ -7,66 +7,93 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane 
+<VBox 
     id="AnchorPane"
-    prefHeight="400.0" 
-    prefWidth="600.0" 
+    prefHeight="800.0" 
+    prefWidth="800.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
-    fx:controller="geoconversor.controller.AppController">
-    
+    fx:controller="geoconversor.controller.AppController"
+    >
+   
     <stylesheets>
         <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
     <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="Name" > </Label>
+            <TextArea fx:id="taName"> </TextArea>
         </HBox>
     </VBox>
     
     <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="Description: "> </Label>
+            <TextArea fx:id="taDescription"> </TextArea>
         </HBox>
     </VBox>
     
     <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="Date: " > </Label>
+            <TextArea fx:id="taDate"> </TextArea>
         </HBox>
     </VBox>
     
     <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="Latitude: " > </Label>
+            <TextArea fx:id="taLatitude"> </TextArea>
         </HBox>
-    </VBox>
+        <HBox >
+            <Label text="Longitude" > </Label>
+            <TextArea fx:id="taLongitude"> </TextArea>
+        </HBox>
+    </VBox>    
     
     <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="Sector: " > </Label>
+            <TextArea fx:id="taSector"> </TextArea>
         </HBox>
-    </VBox>
-    
-    <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="North: " > </Label>
+            <TextArea fx:id="taNorth"> </TextArea>
         </HBox>
-    </VBox>
-    
-    <VBox >
         <HBox >
-            <Label > </Label>
-            <TextArea > </TextArea>
+            <Label text="East: " > </Label>
+            <TextArea fx:id="taEast"> </TextArea>
         </HBox>
     </VBox>
+   
+    <VBox >
+        <Label text="Latitude"/> 
+        <HBox >            
+            <Label text="Deg: "> </Label>
+            <TextArea fx:id="taLatDeg" prefColumnCount="3" prefRowCount="1"  > </TextArea>
+            <Label text="Min: " > </Label>
+            <TextArea fx:id="taLatMin" prefColumnCount="2" prefRowCount="1" > </TextArea>
+            <Label text="Seg: " > </Label>
+            <TextArea fx:id="taLatSeg" prefColumnCount="2" prefRowCount="1" > </TextArea>
+        </HBox>
+        <Label text="Longitude: "/> 
+        <HBox >            
+            <Label text="Deg: "> </Label>
+            <TextArea fx:id="taLonDeg" prefColumnCount="3"  prefRowCount="1"> </TextArea>
+            <Label text="Min: " > </Label>
+            <TextArea fx:id="taLonMin" prefColumnCount="2"  prefRowCount="1"> </TextArea>
+            <Label text="Seg: " > </Label>
+            <TextArea fx:id="taLonSeg" prefColumnCount="2"  prefRowCount="1"> </TextArea>
+        </HBox>
+    </VBox>
+    <HBox >
+        <ButtonBar >
+            <buttons>
+                <Button fx:id="bAddToList" onAction="#getPointProperties" /> 
+            </buttons>
+        </ButtonBar>
+        
+    </HBox>
     
-    
-</AnchorPane>
+</VBox>

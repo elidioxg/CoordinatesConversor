@@ -29,7 +29,10 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.util.Callback;
 
 public class AppController implements Initializable{
     
@@ -68,10 +71,21 @@ public class AppController implements Initializable{
         taNorth.setText(point.getNorth());
         taEast.setText(point.getEast());
     }
+    
+    @FXML
+    protected ListView lvPoints;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        lvPoints.setCellFactory(new Callback<ListView<PointModel>, 
+                ListCell<PointModel>>() {
+            @Override
+            public ListCell<PointModel> call(ListView<PointModel> param) {
+                ListCell<PointModel> cell = new ListCell<PointModel>(){
+                
+                }
+            }
+        });
     }
         
 }

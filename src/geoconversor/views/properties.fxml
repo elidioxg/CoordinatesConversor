@@ -13,12 +13,12 @@
     prefWidth="300.0" 
     fx:controller="geoconversor.controller.AppController"
 >
-    
+   
     <VBox >
         <VBox >
             <HBox >
                 <Label text="Latitude: "/>
-                <Label fx:id="in_latitude"/>  
+                <Label fx:id="in_latitude"></Label>  
             </HBox> 
     
             <HBox >
@@ -44,11 +44,11 @@
         
         <VBox >
             <HBox >
-                <Label text="Latitude: "/>
+                <Label text="Lat(deg, min, sec): "/>
                 <Label fx:id="in_latdms"/>
             </HBox>
             <HBox >
-                <Label text="Longitude: "/>
+                <Label text="Lon(deg, min, sec): "/>
                 <Label fx:id="in_londms"/>
             </HBox>
         </VBox>

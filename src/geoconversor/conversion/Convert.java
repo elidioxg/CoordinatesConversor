@@ -47,7 +47,7 @@ public class Convert {
         int error = vc.validate(sector, north, east);
         if (error == 0) {
             String strSec[] = sector.split(" ");
-            String strUtm = strSec[0] + " " + strSec[1] + " " + north + " " + east;
+            String strUtm = strSec[0] + " " + strSec[1] + " " + east + " " + north;
             CoordinateConversion cc = new CoordinateConversion();
             double[] latlon = cc.utm2LatLon(strUtm);
             return latlon;

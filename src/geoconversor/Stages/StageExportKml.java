@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 exg
+ * Copyright (C) 2016 elidioxg
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ public class StageExportKml {
      * 
      * @param points 
      */
-    public void createStage(ArrayList<PointModel> points) {
+    public void createStage() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     GeoConversor.class.getResource("views/stageKmlExport.fxml"));

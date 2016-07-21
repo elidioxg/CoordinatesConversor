@@ -14,16 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package geoconversor.conversion;
+package geoconversor.Stages;
 
 import geoconversor.GeoConversor;
 import geoconversor.Models.PointModel;
 import geoconversor.controller.AppController;
-import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -32,12 +30,15 @@ import javafx.stage.Stage;
  */
 public class ShowConversion {
     
+    /**
+     * Create a stage to visualize the coordinates converted
+     * @param point 
+     */
     public void createStage(PointModel point){
        
         try{
-            
             FXMLLoader loader = new FXMLLoader(
-              GeoConversor.class.getResource("views/view_point.fxml"));
+              GeoConversor.class.getResource("views/stageViewPoint.fxml"));
             
             Parent root = (Parent) loader.load();
             Stage stage = new Stage();
@@ -46,7 +47,7 @@ public class ShowConversion {
             controller = loader.getController();
             controller.setLabelTexts(point);
             stage.setTitle("Coordinates Converted");
-            stage.setScene(new Scene(root, 400, 400));
+            stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();

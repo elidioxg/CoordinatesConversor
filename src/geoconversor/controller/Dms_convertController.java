@@ -19,19 +19,14 @@ package geoconversor.controller;
 import geoconversor.Models.PointModel;
 import static geoconversor.conversion.Convert.convert;
 import geoconversor.conversion.DMSConversion;
-import geoconversor.conversion.ShowConversion;
+import geoconversor.Stages.ShowConversion;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -75,12 +70,23 @@ public class Dms_convertController implements Initializable {
         if(!rbLongitude.isSelected()){
             lonSignal = false;
         }
-        List list = new ArrayList<>();
-        list = convert(latSignal,latDeg, latMin, latSec, lonSignal,lonDeg, lonMin, lonSec);        
+        ArrayList list = new ArrayList<>();
+        list = convert(latSignal,latDeg, latMin, latSec, lonSignal,lonDeg, 
+                lonMin, lonSec);        
+        String[] utm;
+        utm = convert(String.format(formatPrecision, list.get(0)), 
+                String.format(formatPrecision, list.get(1)));
         
         PointModel pm = new PointModel();
         pm.setLatidude(String.format(formatPrecision, list.get(0)));
-        pm.setLongitude(String.format(formatPrecision, list.get(0)));
+        pm.setLongitude(String.format(formatPrecision, list.get(1)));
+        
+        pm.setSector(utm[0]+" "+utm[1]);
+        pm.setEast(utm[2]);
+        pm.setNorth(utm[3]);        
+        
+        pm.setLatDms(latDeg+" "+latMin+" "+latSec);
+        pm.setLonDms(lonDeg+" "+lonMin+" "+lonSec);
         
         ShowConversion show = new ShowConversion();
         show.createStage(pm);       

@@ -18,7 +18,6 @@ package geoconversor.conversion;
 
 import java.util.ArrayList;
 import java.util.List;
-import geoconversor.conversion.DMSConversion;
 
 /**
  *

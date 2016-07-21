@@ -18,7 +18,7 @@ package geoconversor.controller;
 
 import geoconversor.Models.PointModel;
 import geoconversor.conversion.Convert;
-import geoconversor.conversion.ShowConversion;
+import geoconversor.Stages.ShowConversion;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;

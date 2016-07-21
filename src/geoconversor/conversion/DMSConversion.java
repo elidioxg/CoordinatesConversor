@@ -42,7 +42,9 @@ public class DMSConversion {
         if(!positive) {
             deg *=-1;
         }
-        return doubleToStr(deg);
+        String result = String.format(formatPrecision, deg);
+        result = result.replace(",", ".");
+        return result;
     }
 
     public String convertToDegrees(boolean positive, double degrees, double min, double seg) {
@@ -51,10 +53,6 @@ public class DMSConversion {
         if(!positive) {
             degrees *=-1;
         }
-        return doubleToStr(degrees);
-    }
-
-    public String doubleToStr(double degrees) {
         String result = String.format(formatPrecision, degrees);
         result = result.replace(",", ".");
         return result;

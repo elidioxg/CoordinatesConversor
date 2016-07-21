@@ -10,8 +10,9 @@
 <GridPane 
     id="AnchorPane" 
     prefHeight="400.0" 
-    prefWidth="600.0" 
-    xmlns:fx="http://javafx.com/fxml/1">
+    prefWidth="400.0" 
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="geoconversor.controller.StageKmlController">
     
     <Label 
         GridPane.columnIndex="0"
@@ -20,12 +21,14 @@
     </Label>
     <TextField 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="0">    
+        GridPane.rowIndex="0"
+        fx:id="tfFilename">    
     </TextField>
     <Button 
         GridPane.columnIndex="2"
         GridPane.rowIndex="0"
-        fx:id="buttonLoc"
+        fx:id="bFilename"
+        onAction="" 
     >
     </Button>
     
@@ -56,12 +59,14 @@
         GridPane.rowIndex="2">
         <buttons>
             <Button 
-                fx:id="buttonSave"
-                text="Save">
+                fx:id="bExport"
+                text="Save"
+                onAction="#exportKml" >
             </Button> 
             <Button 
-                fx:id="buttonClose"
-                text="Close">
+                fx:id="bClose"
+                text="Close"
+                onAction="#closeStage" >
             </Button>
         </buttons>
     </ButtonBar>

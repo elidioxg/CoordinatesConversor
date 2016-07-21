@@ -192,7 +192,17 @@
         GridPane.columnSpan="6"  
         GridPane.rowIndex="10">
         <buttons>
-            <Button fx:id="bAddToList" onAction="#getPointProperties" /> 
+            <Button 
+                text="Add" 
+                fx:id="bAddToList" 
+                onAction="#setPointProperties" 
+            >
+            </Button> 
+            <Button 
+                fx:id="bClose" 
+                onAction="#closeStage"
+                text="Close">
+            </Button>
         </buttons>
     </ButtonBar>
  

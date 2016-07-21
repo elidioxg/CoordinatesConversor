@@ -21,9 +21,19 @@
     
     <ButtonBar  >
         <buttons>
-            <Button text="CSV"/> 
-            <Button text="KML"/>
-            <Button text="Delete"/>
+            <Button 
+                fx:id=""
+                onAction="#openStageCsv" 
+                text="CSV">
+            </Button> 
+            <Button                 
+                onAction="#openStageKml" 
+                text="KML">
+            </Button>
+            <Button 
+                text="Delete"
+                onAction="#deleteFromList">
+            </Button>
         </buttons>
     </ButtonBar>
     

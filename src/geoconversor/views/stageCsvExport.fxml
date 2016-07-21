@@ -8,9 +8,10 @@
 
 <GridPane 
     id="AnchorPane" 
-    prefHeight="400.0" 
-    prefWidth="600.0" 
-    xmlns:fx="http://javafx.com/fxml/1">
+    prefHeight="300.0" 
+    prefWidth="300.0" 
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="geoconversor.controller.StageCsvController">
     
     <Label 
         GridPane.columnIndex="0"
@@ -18,13 +19,15 @@
         text="Location">
     </Label>
     <TextField 
+        fx:id="tfFilename"
         GridPane.columnIndex="1"
         GridPane.rowIndex="0">    
     </TextField>
     <Button 
         GridPane.columnIndex="2"
         GridPane.rowIndex="0"
-        fx:id="buttonLoc"
+        fx:id="bFilename"
+        onAction="#setFilename" 
     >
     </Button>
     
@@ -44,12 +47,14 @@
         GridPane.rowIndex="2">
         <buttons>
             <Button 
-                fx:id="buttonSave"
-                text="Save">
+                fx:id="bExport"
+                text="Save"
+                onAction="#exportCSV" >
             </Button> 
             <Button 
-                fx:id="buttonClose"
-                text="Close">
+                fx:id="bClose"
+                text="Close"
+                onAction="#closeStage">
             </Button>
         </buttons>
     </ButtonBar>

@@ -17,7 +17,7 @@
 package geoconversor.controller;
 
 import geoconversor.Models.PointModel;
-import static geoconversor.conversion.Convert.convert;
+import geoconversor.conversion.Convert;
 import geoconversor.conversion.ShowConversion;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,7 +46,9 @@ public class Latlon_convertController implements Initializable {
     protected void convertDec(){
         String lat = tfLatitude.getText();
         String lon = tfLongitude.getText();
-        String strUtm[] = convert(lat, lon);           
+        String[] latDms = Convert.convert(lat);
+        String[] lonDms = Convert.convert(lon);
+        String strUtm[] = Convert.convert(lat, lon);           
         
         PointModel pm = new PointModel();
         pm.setLatidude(lat);
@@ -54,6 +56,8 @@ public class Latlon_convertController implements Initializable {
         pm.setSector(strUtm[0]+" "+strUtm[1]);
         pm.setNorth(strUtm[2]);
         pm.setEast(strUtm[3]);
+        pm.setLatDms(latDms[0]+" "+latDms[1]+" "+latDms[2]);
+        pm.setLonDms(lonDms[0]+" "+lonDms[1]+" "+lonDms[2]);
         
         ShowConversion show = new ShowConversion();
         show.createStage(pm);

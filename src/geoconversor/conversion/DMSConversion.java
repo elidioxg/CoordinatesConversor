@@ -22,7 +22,15 @@ public class DMSConversion {
             deg=deg+1;
             min=min-60.;
         }
-        return doubleToStr(deg, min, sec);
+        String str1,str2,str3;        
+        if(deg<0){deg*=-1;}
+        if(min<0){min*=-1;}
+        if(sec<0){sec*=-1;}       
+        str1 = String.format("%.0f",deg);        
+        str2 = String.format("%.0f",min);        
+        str3 = String.format("%.0f",sec);
+        return (str1+" "+str2+ " "+str3);
+
     }
     
     public String convertToDegrees(boolean positive, String degrees, String min, String seg) {
@@ -51,21 +59,11 @@ public class DMSConversion {
         result = result.replace(",", ".");
         return result;
     }
-    public String doubleToStr(double deg, double min, double sec){        
-        String aux1,aux2,aux3;        
-        if(deg<0){deg*=-1;}
-        if(min<0){min*=-1;}
-        if(sec<0){sec*=-1;}       
-        aux1 = String.format("%.0f",deg);        
-        aux2 = String.format("%.0f",min);        
-        aux3 = String.format("%.0f",sec);
-        return (aux1+" "+aux2+ " "+aux3);
-    }
+    
     public ArrayList<String> DegreesConversion(double lat, double lon) {
         ArrayList<String> arrayList = new ArrayList<>();
-        DMSConversion cg = new DMSConversion();
-        String strLat = cg.convertFromDegrees(lat);
-        String strLon = cg.convertFromDegrees(lon);
+        String strLat = convertFromDegrees(lat);
+        String strLon = convertFromDegrees(lon);
         String coordLat[] = strLat.split(" ");
         String coordLon[] = strLon.split(" ");
         arrayList.add(coordLat[0]);

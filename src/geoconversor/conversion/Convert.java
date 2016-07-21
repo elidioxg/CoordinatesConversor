@@ -18,13 +18,34 @@ package geoconversor.conversion;
 
 import java.util.ArrayList;
 import java.util.List;
+import geoconversor.conversion.DMSConversion;
 
 /**
  *
  * @author elidioxg
  */
 public class Convert {
+    
+    /**
+     * Convert from decimal degrees to degrees, minutes and seconds
+     * @param deg Latitude or Longitude in decimal degrees
+     * @return 
+     */
+    public static String[] convert(String deg){        
+        Double degrees = Double.parseDouble(deg);
+        DMSConversion conversion = new DMSConversion();
+        String dms = conversion.convertFromDegrees(degrees);
+        System.out.println("DMS: "+dms);
+        String Dms[] = dms.split(" ");
+        return Dms;
+    }
 
+    /**
+     * 
+     * @param lat Latitude in decimal degrees
+     * @param lon Longitude in decimal degrees
+     * @return String with UTM Coordinates
+     */
     public static String[] convert(String lat, String lon) {
         lat = lat.replace(",", ".");
         lon = lon.replace(",", ".");
@@ -42,6 +63,13 @@ public class Convert {
         return null;
     }
 
+    /**
+     * 
+     * @param sector
+     * @param north
+     * @param east
+     * @return 
+     */
     public static double[] convert(String sector, String north, String east) {
         ValidateConversion vc = new ValidateConversion();
         int error = vc.validate(sector, north, east);

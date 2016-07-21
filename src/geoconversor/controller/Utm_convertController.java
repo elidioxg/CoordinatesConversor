@@ -17,6 +17,7 @@
 package geoconversor.controller;
 
 import geoconversor.Models.PointModel;
+import geoconversor.conversion.Convert;
 import static geoconversor.conversion.Convert.convert;
 import geoconversor.conversion.ShowConversion;
 import java.net.URL;
@@ -47,10 +48,15 @@ public class Utm_convertController implements Initializable {
     
     @FXML
     protected void convertUTM(){       
-        String strSector  = tfSector.getCharacters().toString();        
+        String strSector  = tfSector.getCharacters().toString();    
         String strNorth = tfNorth.getCharacters().toString().trim();
         String strEast = tfEast.getCharacters().toString().trim();
+
         double latlon[] = convert(strSector, strNorth,strEast); 
+        
+        String[] latDms = Convert.convert(String.format(formatString, latlon[0]));
+        String[] lonDms = Convert.convert(String.format(formatString, latlon[1]));
+        
         
         PointModel pm = new PointModel();
         pm.setLatidude(String.format(formatString, latlon[0]));
@@ -58,10 +64,11 @@ public class Utm_convertController implements Initializable {
         pm.setSector(strSector);
         pm.setNorth(strNorth);
         pm.setEast(strEast);
+        pm.setLatDms(latDms[0]+" "+latDms[1]+" "+latDms[2]);
+        pm.setLonDms(lonDms[0]+" "+lonDms[1]+" "+lonDms[2]);
                
         ShowConversion show = new ShowConversion();
         show.createStage(pm);
-        
     }
     
 }

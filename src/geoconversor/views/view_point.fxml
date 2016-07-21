@@ -7,93 +7,193 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox 
+<GridPane 
     id="AnchorPane"
-    prefHeight="800.0" 
-    prefWidth="800.0" 
+    prefHeight="600.0" 
+    prefWidth="600.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.AppController"
-    >
+>
    
     <stylesheets>
         <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
-    <VBox >
-        <HBox >
-            <Label text="Name" > </Label>
-            <TextArea fx:id="taName"> </TextArea>
-        </HBox>
-    </VBox>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="0" 
+        text="Name" > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="0"
+        prefColumnCount="20" 
+        prefRowCount="1"
+        fx:id="taName"> 
+    </TextArea>
     
-    <VBox >
-        <HBox >
-            <Label text="Description: "> </Label>
-            <TextArea fx:id="taDescription"> </TextArea>
-        </HBox>
-    </VBox>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="1"
+        text="Description: "> 
+    </Label>    
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="1"
+        prefColumnCount="20" 
+        prefRowCount="4"
+        fx:id="taDescription"> 
+    </TextArea>
     
-    <VBox >
-        <HBox >
-            <Label text="Date: " > </Label>
-            <TextArea fx:id="taDate"> </TextArea>
-        </HBox>
-    </VBox>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="2"
+        text="Date: " > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="2"
+        prefColumnCount="20" 
+        prefRowCount="1"
+        fx:id="taDate"> 
+    </TextArea>
     
-    <VBox >
-        <HBox >
-            <Label text="Latitude: " > </Label>
-            <TextArea fx:id="taLatitude"> </TextArea>
-        </HBox>
-        <HBox >
-            <Label text="Longitude" > </Label>
-            <TextArea fx:id="taLongitude"> </TextArea>
-        </HBox>
-    </VBox>    
-    
-    <VBox >
-        <HBox >
-            <Label text="Sector: " > </Label>
-            <TextArea fx:id="taSector"> </TextArea>
-        </HBox>
-        <HBox >
-            <Label text="North: " > </Label>
-            <TextArea fx:id="taNorth"> </TextArea>
-        </HBox>
-        <HBox >
-            <Label text="East: " > </Label>
-            <TextArea fx:id="taEast"> </TextArea>
-        </HBox>
-    </VBox>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="3"
+        text="Latitude: " > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="3"
+        prefColumnCount="20" 
+        prefRowCount="1"
+        fx:id="taLatitude"> 
+    </TextArea>
    
-    <VBox >
-        <Label text="Latitude"/> 
-        <HBox >            
-            <Label text="Deg: "> </Label>
-            <TextArea fx:id="taLatDeg" prefColumnCount="3" prefRowCount="1"  > </TextArea>
-            <Label text="Min: " > </Label>
-            <TextArea fx:id="taLatMin" prefColumnCount="2" prefRowCount="1" > </TextArea>
-            <Label text="Seg: " > </Label>
-            <TextArea fx:id="taLatSeg" prefColumnCount="2" prefRowCount="1" > </TextArea>
-        </HBox>
-        <Label text="Longitude: "/> 
-        <HBox >            
-            <Label text="Deg: "> </Label>
-            <TextArea fx:id="taLonDeg" prefColumnCount="3"  prefRowCount="1"> </TextArea>
-            <Label text="Min: " > </Label>
-            <TextArea fx:id="taLonMin" prefColumnCount="2"  prefRowCount="1"> </TextArea>
-            <Label text="Seg: " > </Label>
-            <TextArea fx:id="taLonSeg" prefColumnCount="2"  prefRowCount="1"> </TextArea>
-        </HBox>
-    </VBox>
-    <HBox >
-        <ButtonBar >
-            <buttons>
-                <Button fx:id="bAddToList" onAction="#getPointProperties" /> 
-            </buttons>
-        </ButtonBar>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="4"
+        text="Longitude" > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="4"
+        prefColumnCount="20" 
+        prefRowCount="1"
+        fx:id="taLongitude"> 
+    </TextArea>
+    
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="5"
+        text="Sector: " > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="5"
+        prefColumnCount="4" 
+        prefRowCount="1"
+        fx:id="taSector"> 
+    </TextArea>
+    
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="6"
+        text="North: " > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="6"
+        prefColumnCount="8" 
+        prefRowCount="1"
+        fx:id="taNorth"> 
+    </TextArea>
+    
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="7"
+        text="East: " > 
+    </Label>
+    <TextArea 
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="7"
+        prefColumnCount="6" 
+        prefRowCount="1"
+        fx:id="taEast"> 
+    </TextArea>
         
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="8"
+        text="Latitude"/> 
+    
+    <HBox
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="8">    
+        
+        <Label
+            text="Deg: "> 
+        </Label>        
+        <TextArea 
+            fx:id="taLatDeg" prefColumnCount="3" prefRowCount="1"  > 
+        </TextArea>
+        
+        <Label 
+            text="Min: " > 
+        </Label>
+        <TextArea 
+            fx:id="taLatMin" prefColumnCount="2" prefRowCount="1" > 
+        </TextArea>
+        
+        <Label 
+            text="Seg: " > 
+        </Label>
+        <TextArea 
+            fx:id="taLatSeg" prefColumnCount="2" prefRowCount="1" > 
+        </TextArea>
+    
     </HBox>
     
-</VBox>
+    <Label 
+        GridPane.columnIndex="0"  
+        GridPane.rowIndex="9"
+        text="Longitude: "/> 
+    <HBox
+        GridPane.columnIndex="1"  
+        GridPane.rowIndex="9"
+    > 
+        <Label 
+            text="Deg: "> 
+        </Label>
+        <TextArea 
+            fx:id="taLonDeg" prefColumnCount="3"  prefRowCount="1"> 
+        </TextArea>
+    
+        <Label 
+            text="Min: " > 
+        </Label>
+        <TextArea 
+            fx:id="taLonMin" prefColumnCount="2"  prefRowCount="1"> 
+        </TextArea>
+    
+        <Label 
+            text="Seg: " > 
+        </Label>
+        <TextArea 
+            fx:id="taLonSeg" prefColumnCount="2"  prefRowCount="1"> 
+        </TextArea>
+    
+    </HBox>
+    
+    <ButtonBar 
+        GridPane.columnIndex="0" 
+        GridPane.columnSpan="6"  
+        GridPane.rowIndex="10">
+        <buttons>
+            <Button fx:id="bAddToList" onAction="#getPointProperties" /> 
+        </buttons>
+    </ButtonBar>
+ 
+</GridPane>

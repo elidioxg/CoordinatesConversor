@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane 
+<GridPane 
     xmlns:fx="http://javafx.com/fxml/1" 
     id="AnchorPane" 
     prefHeight="300.0" 
@@ -14,46 +14,66 @@
     fx:controller="geoconversor.controller.AppController"
 >
    
-    <VBox >
-        <VBox >
-            <HBox >
-                <Label text="Latitude: "/>
-                <Label fx:id="in_latitude"></Label>  
-            </HBox> 
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="0"  
+        text="Latitude: "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="0"
+        fx:id="in_latitude"/>
+      
     
-            <HBox >
-                <Label text="Longitude: "/>
-                <Label fx:id="in_longitude"/>
-            </HBox>
-        </VBox>
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="1"
+        text="Longitude: "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="1"
+        fx:id="in_longitude"/>
+    
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="2"
+        text="Sector: "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="2"
+        fx:id="in_sector"/>
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="3"
+        text="North: "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="3"
+        fx:id="in_north"/>
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="4"
+        text="East"/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="4"
+        fx:id="in_east"/>
+    
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="5"
+        text="Lat(deg, min, sec): "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="5"
+        fx:id="in_latdms"/>
+    
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="6"
+        text="Lon(deg, min, sec): "/>
+    <Label 
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="6"
+        fx:id="in_londms"/>
         
-        <VBox >
-            <HBox >
-                <Label text="Sector: "/>
-                <Label fx:id="in_sector"/>
-            </HBox>
-            <HBox >
-                <Label text="North: "/>
-                <Label fx:id="in_north"/>
-            </HBox>
-            <HBox >
-                <Label text="East"/>
-                <Label fx:id="in_east"/>
-            </HBox>
-        </VBox>
-        
-        <VBox >
-            <HBox >
-                <Label text="Lat(deg, min, sec): "/>
-                <Label fx:id="in_latdms"/>
-            </HBox>
-            <HBox >
-                <Label text="Lon(deg, min, sec): "/>
-                <Label fx:id="in_londms"/>
-            </HBox>
-        </VBox>
-    
-    </VBox>
-    
-    
-</AnchorPane>
+</GridPane>

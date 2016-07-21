@@ -30,30 +30,21 @@
 
     </ScrollPane> 
 
-    <VBox
+    <TabPane 
         GridPane.columnIndex="2"
         GridPane.rowIndex="0">
-                
-        <fx:include source="utm_convert.fxml"/>
+        <Tab text="Decimal Degrees">
+            <fx:include source="latlon_convert.fxml"/>
+        </Tab> 
+        <Tab text="UTM">
+            <fx:include source="utm_convert.fxml"/>
+        </Tab> 
+        <Tab text="Degrees, minutes, seconds">
+            <fx:include source="dms_convert.fxml"/>
+        </Tab>  
         
-    </VBox>  
-    
-    <VBox
-        GridPane.columnIndex="3"
-        GridPane.rowIndex="0">        
-        
-        <fx:include source="latlon_convert.fxml"/>
-        
-    </VBox>  
-    
-    <VBox
-        GridPane.columnIndex="4"
-        GridPane.rowIndex="0">        
-        
-        <fx:include source="dms_convert.fxml"/>
-        
-    </VBox> 
-    
+    </TabPane>  
+
     <HBox 
         GridPane.columnIndex="0"
         GridPane.rowIndex="4"

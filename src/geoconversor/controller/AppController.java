@@ -24,12 +24,15 @@ package geoconversor.controller;
 
 import geoconversor.GeoConversor;
 import geoconversor.Models.PointModel;
+import geoconversor.Stages.StageExportCsv;
+import geoconversor.Stages.StageExportKml;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
 
 public class AppController implements Initializable{
     
@@ -38,16 +41,22 @@ public class AppController implements Initializable{
             taEast, taNorth, taLatDeg, taLatMin, taLatSeg, taLonDeg, taLonMin, 
             taLonSeg;
     
-    @FXML Button bAddToList;
+    @FXML protected Button bAddToList;
     
     /**
      * Get the properties of point to add to ListView
      * This handle the action for "Button Add Point"
      */
     @FXML
-    protected void getPointProperties(){
+    protected void setPointProperties(){
         PointModel pm = new PointModel();
-        pm.setName(taName.getText());
+        String name;
+        if(taName.getText().trim().isEmpty()){
+            name= "Point";
+        } else {
+            name=taName.getText();
+        }
+        pm.setName(name);
         pm.setDescription(taDescription.getText());
         pm.setLatidude(taLatitude.getText());
         pm.setLongitude(taLongitude.getText());
@@ -66,8 +75,7 @@ public class AppController implements Initializable{
         taLongitude.setText(point.getLongitude());
         taSector.setText(point.getSector());
         taNorth.setText(point.getNorth());
-        taEast.setText(point.getEast());
-        System.out.println("point.getLatDms()"+point.getLatDms());
+        taEast.setText(point.getEast());        
         String latDms = point.getLatDms();
         String lat[] = latDms.split(" ");
         taLatDeg.setText(lat[0]);
@@ -78,6 +86,31 @@ public class AppController implements Initializable{
         taLonDeg.setText(lon[0]);
         taLonMin.setText(lon[1]);
         taLonSeg.setText(lon[2]);
+    }
+    
+    @FXML
+    protected void openStageCsv(){
+        StageExportCsv export = new StageExportCsv();
+        export.createStage();
+    }
+    @FXML
+    protected void openStageKml(){
+        StageExportKml export = new StageExportKml();
+        export.createStage();
+    }
+    
+    @FXML 
+    protected void deleteFromList(){
+        GeoConversor.getInstance().deleteFromList();
+    }
+    
+    @FXML
+    protected Button bClose;
+    
+    @FXML
+    protected void closeStage(){
+        Stage stage = (Stage) bClose.getScene().getWindow();
+        stage.close();
     }
         
     @Override

@@ -25,7 +25,6 @@ import geoconversor.Models.PointModel;
 import geoconversor.controller.AppController;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -43,9 +42,18 @@ import javafx.util.Callback;
 public class GeoConversor extends Application {    
     private GridPane grid;
     private ListView lvPoints;
-    private List list = new ArrayList();
+    private ArrayList list = new ArrayList();
     private static GeoConversor instance;    
     private static final String AppTitle = "GeoConversor";
+    
+    /**
+     * Return the objects in the ListView
+     * @return 
+     */
+    public ArrayList getList(){
+        return list;
+    }
+    
     public GeoConversor(){
         instance = this;
     }
@@ -123,6 +131,13 @@ public class GeoConversor extends Application {
         list.add(pm);        
         ObservableList ol = FXCollections.observableArrayList(list);
         lvPoints.setItems(ol);
+    }
+    
+    public void deleteFromList(){
+        if(lvPoints.getSelectionModel().getSelectedIndex()>=0){
+            lvPoints.getItems().remove(lvPoints.getSelectionModel().getSelectedIndex());                
+            list.remove(lvPoints.getSelectionModel().getSelectedIndex());           
+        }
     }
 
     /**

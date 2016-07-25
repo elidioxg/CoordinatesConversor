@@ -24,22 +24,37 @@ package geoconversor.controller;
 
 import geoconversor.GeoConversor;
 import geoconversor.Models.PointModel;
+import geoconversor.Stages.StageConvert;
 import geoconversor.Stages.StageExportCsv;
 import geoconversor.Stages.StageExportKml;
+import geoconversor.Utils.GetTime;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class AppController implements Initializable{
     
+    @FXML
+    protected void openConvertStage(){
+        StageConvert stage = new StageConvert();
+        stage.createStage();    
+    }
+    
+    @FXML protected Button bExit;
+    @FXML protected void exit(){
+        Stage stage = (Stage) bExit.getScene().getWindow();
+        stage.close();
+    }
+    
     @FXML 
     protected TextArea taName, taDescription, taLatitude, taLongitude, taSector, 
             taEast, taNorth, taLatDeg, taLatMin, taLatSeg, taLonDeg, taLonMin, 
-            taLonSeg;
+            taLonSeg, taDate;
     
     @FXML protected Button bAddToList;
     
@@ -63,7 +78,10 @@ public class AppController implements Initializable{
         pm.setSector(taSector.getText());
         pm.setNorth(taNorth.getText());
         pm.setEast(taEast.getText());
+        pm.setTime(GetTime.getTimeFmt());
         GeoConversor.getInstance().addToList(pm);
+        Stage stage = (Stage) bAddToList.getScene().getWindow();
+        stage.close();
     }
     
     /**
@@ -86,6 +104,7 @@ public class AppController implements Initializable{
         taLonDeg.setText(lon[0]);
         taLonMin.setText(lon[1]);
         taLonSeg.setText(lon[2]);
+        taDate.setText(GetTime.getTimeFmt());
     }
     
     @FXML

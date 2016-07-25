@@ -19,6 +19,7 @@ package geoconversor.controller;
 import geoconversor.Models.PointModel;
 import geoconversor.conversion.Convert;
 import geoconversor.Stages.ShowConversion;
+import geoconversor.Utils.GetTime;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -58,6 +59,7 @@ public class Latlon_convertController implements Initializable {
         pm.setEast(strUtm[3]);
         pm.setLatDms(latDms[0]+" "+latDms[1]+" "+latDms[2]);
         pm.setLonDms(lonDms[0]+" "+lonDms[1]+" "+lonDms[2]);
+        pm.setTime(GetTime.getTimeFmt());
         
         ShowConversion show = new ShowConversion();
         show.createStage(pm);

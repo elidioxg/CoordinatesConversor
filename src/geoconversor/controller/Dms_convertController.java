@@ -20,6 +20,7 @@ import geoconversor.Models.PointModel;
 import static geoconversor.conversion.Convert.convert;
 import geoconversor.conversion.DMSConversion;
 import geoconversor.Stages.ShowConversion;
+import geoconversor.Utils.GetTime;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -87,6 +88,8 @@ public class Dms_convertController implements Initializable {
         
         pm.setLatDms(latDeg+" "+latMin+" "+latSec);
         pm.setLonDms(lonDeg+" "+lonMin+" "+lonSec);
+        
+        pm.setTime(GetTime.getTimeFmt());
         
         ShowConversion show = new ShowConversion();
         show.createStage(pm);       

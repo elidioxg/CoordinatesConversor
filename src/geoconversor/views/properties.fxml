@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,11 +9,15 @@
 
 <GridPane 
     xmlns:fx="http://javafx.com/fxml/1" 
-    id="AnchorPane" 
-    prefHeight="300.0" 
+    id="grid" 
+    prefHeight="400.0" 
     prefWidth="300.0" 
     fx:controller="geoconversor.controller.AppController"
 >
+    
+    <stylesheets>
+        <URL value="@PropertiesStyle.css" />
+    </stylesheets> 
    
     <Label 
         GridPane.columnIndex="0"
@@ -21,7 +26,8 @@
     <Label 
         GridPane.columnIndex="1"
         GridPane.rowIndex="0"
-        fx:id="in_latitude"/>
+        fx:id="in_latitude"
+    />
       
     
     <Label 
@@ -33,47 +39,75 @@
         GridPane.rowIndex="1"
         fx:id="in_longitude"/>
     
+    <Separator 
+        GridPane.columnIndex="0"
+        GridPane.columnSpan="3"
+        GridPane.rowIndex="2"
+        orientation="HORIZONTAL" >
+    </Separator>   
+        
     <Label 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="2"
+        GridPane.rowIndex="3"
         text="Sector: "/>
     <Label 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="2"
+        GridPane.rowIndex="3"
         fx:id="in_sector"/>
     <Label 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="3"
+        GridPane.rowIndex="4"
         text="North: "/>
     <Label 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="3"
+        GridPane.rowIndex="4"
         fx:id="in_north"/>
     <Label 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="4"
+        GridPane.rowIndex="5"
         text="East"/>
     <Label 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="4"
+        GridPane.rowIndex="5"
         fx:id="in_east"/>
+    
+    <Separator 
+        GridPane.columnIndex="0"
+        GridPane.columnSpan="3"
+        GridPane.rowIndex="6"
+        orientation="HORIZONTAL" >
+    </Separator>   
     
     <Label 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="5"
+        GridPane.rowIndex="7"
         text="Lat(deg, min, sec): "/>
     <Label 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="5"
+        GridPane.rowIndex="7"
         fx:id="in_latdms"/>
     
     <Label 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="6"
+        GridPane.rowIndex="8"
         text="Lon(deg, min, sec): "/>
     <Label 
         GridPane.columnIndex="1"
-        GridPane.rowIndex="6"
+        GridPane.rowIndex="8"
         fx:id="in_londms"/>
+    
+    <Separator 
+        GridPane.columnIndex="0"
+        GridPane.columnSpan="3"
+        GridPane.rowIndex="9"
+        orientation="HORIZONTAL" >
+    </Separator> 
+    
+    <Label 
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="10"  
+        text="Description:"
+        />
+    
         
 </GridPane>

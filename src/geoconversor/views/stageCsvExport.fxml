@@ -9,7 +9,7 @@
 <GridPane 
     id="AnchorPane" 
     prefHeight="300.0" 
-    prefWidth="300.0" 
+    prefWidth="350.0" 
     xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="geoconversor.controller.StageCsvController">
     

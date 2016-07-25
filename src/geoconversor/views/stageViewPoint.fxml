@@ -9,15 +9,15 @@
 
 <GridPane 
     id="AnchorPane"
-    prefHeight="600.0" 
-    prefWidth="600.0" 
+    prefHeight="500.0" 
+    prefWidth="500.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.AppController"
 >
    
     <stylesheets>
-        <URL value="@AppStyleSheet.css"/>
+        <URL value="@EditPointStyle.css"/>
     </stylesheets>
     
     <Label 

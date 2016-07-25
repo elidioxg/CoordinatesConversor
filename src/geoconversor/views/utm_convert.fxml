@@ -8,17 +8,18 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane 
-    id="AnchorPane" 
+    id="ConverterPane" 
     prefHeight="300.0" 
     prefWidth="300.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.Utm_convertController">
     <stylesheets>
-        <URL value="@AppStyleSheet.css"/>
+        <URL value="@ConverterStyle.css"/>
     </stylesheets>
     
-    <VBox >
+    <VBox 
+    id="vbox">
         
         <Label text="Sector"/>
         <TextField fx:id="tfSector"/>
@@ -26,7 +27,8 @@
         <TextField fx:id="tfNorth"/>
         <Label text="East"/>
         <TextField fx:id="tfEast"/>
-        <ButtonBar >
+        <ButtonBar 
+            id="buttonbar">
             <buttons>
                 <Button
                     text="Convert"

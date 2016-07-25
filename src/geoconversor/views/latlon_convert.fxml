@@ -8,24 +8,26 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane 
-    id="AnchorPane" 
+    id="ConverterPane" 
     prefHeight="300.0" 
     prefWidth="300.0" 
     styleClass="mainFxmlClass"             
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.Latlon_convertController">
     <stylesheets>
-        <URL value="@AppStyleSheet.css"/>
+        <URL value="@ConverterStyle.css"/>
     </stylesheets>
     
-    <VBox >
+    <VBox
+        id="vbox"    >
         
         <Label text="Latitude"/>
         <TextField fx:id="tfLatitude"/>
         <Label text="Longitude"/>
         <TextField fx:id="tfLongitude"/>
         
-        <ButtonBar >
+        <ButtonBar
+            id="buttonbar"        >
             <buttons>
                 <Button
                     text="Convert"

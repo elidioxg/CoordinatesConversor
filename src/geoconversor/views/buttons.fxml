@@ -7,10 +7,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox
-    id="AnchorPane" 
-    prefHeight="100.0" 
-    prefWidth="600.0" 
+<VBox
+    id="vboxpane" 
+    prefHeight="500.0" 
+    prefWidth="200.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.AppController">
@@ -19,22 +19,34 @@
         <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
-    <ButtonBar  >
-        <buttons>
-            <Button 
-                fx:id=""
-                onAction="#openStageCsv" 
-                text="CSV">
-            </Button> 
-            <Button                 
-                onAction="#openStageKml" 
-                text="KML">
-            </Button>
-            <Button 
-                text="Delete"
-                onAction="#deleteFromList">
-            </Button>
-        </buttons>
-    </ButtonBar>
+    <Button 
+        fx:id="bConvertStage"
+        onAction="#openConvertStage"
+        text="Convert Coordinates" 
+        minWidth="200" >
+    </Button>        
+            
+    <Button 
+        fx:id="bCsvStage"
+        onAction="#openStageCsv" 
+        text="Export to CSV"
+        minWidth="200">
+    </Button> 
+    <Button                 
+        onAction="#openStageKml" 
+        text="Export to KML"
+        minWidth="200">
+    </Button>
+    <Button 
+        text="Delete from list"
+        onAction="#deleteFromList"
+        minWidth="200">
+    </Button>    
+    <Button
+        fx:id="bExit"
+        text="Quit program"
+        onAction="#exit"
+        minWidth="200">
+    </Button>
     
-</HBox>
+</VBox>

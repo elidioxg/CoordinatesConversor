@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane 
-    id="AnchorPane" 
+    id="ConverterPane" 
     prefHeight="300.0" 
     prefWidth="300.0" 
     styleClass="mainFxmlClass" 
@@ -16,10 +16,11 @@
     fx:controller="geoconversor.controller.Dms_convertController">
     
     <stylesheets>
-        <URL value="@AppStyleSheet.css"/>
+        <URL value="@ConverterStyle.css"/>
     </stylesheets>
     
-    <VBox >
+    <VBox
+        id="vbox"    >
         
         <HBox >
             <Label text="Latitude"/>
@@ -86,6 +87,7 @@
             <Label text="''"/>
         </HBox>
         <ButtonBar
+            id="buttonbar"
         >
             <buttons>
                 <Button text="Convert"

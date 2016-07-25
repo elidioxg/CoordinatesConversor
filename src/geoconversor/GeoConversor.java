@@ -68,7 +68,7 @@ public class GeoConversor extends Application {
         
         AppController controller = loader.getController();
         
-        lvPoints = new ListView();        
+        lvPoints = new ListView();         
         lvPoints.setCellFactory(new Callback<ListView<PointModel>, ListCell<PointModel>>(){
             @Override
             public ListCell<PointModel> call(ListView<PointModel> param) {
@@ -97,7 +97,7 @@ public class GeoConversor extends Application {
         
         });
         
-        grid.add(lvPoints, 0, 0);
+        grid.add(lvPoints, 1, 1);
         
         Scene scene = new Scene(grid);
         
@@ -133,10 +133,11 @@ public class GeoConversor extends Application {
         lvPoints.setItems(ol);
     }
     
-    public void deleteFromList(){
+    public void deleteFromList(){        
         if(lvPoints.getSelectionModel().getSelectedIndex()>=0){
-            lvPoints.getItems().remove(lvPoints.getSelectionModel().getSelectedIndex());                
-            list.remove(lvPoints.getSelectionModel().getSelectedIndex());           
+            int index = lvPoints.getSelectionModel().getSelectedIndex();
+            lvPoints.getItems().remove(index);                
+            list.remove(index);           
         }
     }
 

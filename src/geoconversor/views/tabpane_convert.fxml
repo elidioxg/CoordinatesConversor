@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+            
+           
+
+<TabPane 
+    prefHeight="500.0" 
+    prefWidth="300.0" 
+    styleClass="mainFxmlClass" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="geoconversor.controller.AppController"
+    id="tabpane"
+    GridPane.columnIndex="2"
+    GridPane.rowIndex="0"
+    tabClosingPolicy="UNAVAILABLE" >
+    
+    <stylesheets>
+        <URL value="@ConverterStyle.css"/>
+    </stylesheets>
+    <Tab text="Decimal Degrees">
+        <fx:include source="latlon_convert.fxml"/>
+    </Tab> 
+    <Tab text="UTM">
+        <fx:include source="utm_convert.fxml"/>
+    </Tab> 
+    <Tab text="Deg, min, sec">
+        <fx:include source="dms_convert.fxml"/>
+    </Tab>  
+        
+</TabPane>  

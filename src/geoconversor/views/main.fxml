@@ -10,8 +10,8 @@
 <GridPane
     xmlns:fx="http://javafx.com/fxml/1"
     id="grid"
-    prefHeight="400.0"
-    prefWidth="1000.0"
+    prefHeight="500.0"
+    prefWidth="800"
     alignment="CENTER"
     fx:controller="geoconversor.controller.AppController"
 >
@@ -19,9 +19,24 @@
         <URL value="@AppStyleSheet.css" />
     </stylesheets>       
     
-    <ScrollPane 
-        GridPane.columnIndex="1" 
+    <MenuBar 
+        GridPane.columnIndex="0"
         GridPane.rowIndex="0"
+        GridPane.columnSpan="3"   
+        fx:id="menuBar"
+    >
+      <menus>
+         <Menu text="File">
+            <items>               
+               <MenuItem id="menuExit" text="Exit" />
+            </items>
+         </Menu>
+      </menus>
+     </MenuBar>
+    
+    <ScrollPane 
+        GridPane.columnIndex="2" 
+        GridPane.rowIndex="1"
         GridPane.rowSpan="3"> 
         
         <content >            
@@ -30,25 +45,10 @@
 
     </ScrollPane> 
 
-    <TabPane 
-        GridPane.columnIndex="2"
-        GridPane.rowIndex="0">
-        <Tab text="Decimal Degrees">
-            <fx:include source="latlon_convert.fxml"/>
-        </Tab> 
-        <Tab text="UTM">
-            <fx:include source="utm_convert.fxml"/>
-        </Tab> 
-        <Tab text="Degrees, minutes, seconds">
-            <fx:include source="dms_convert.fxml"/>
-        </Tab>  
-        
-    </TabPane>  
-
     <HBox 
         GridPane.columnIndex="0"
-        GridPane.rowIndex="4"
-        GridPane.columnSpan="5">
+        GridPane.rowIndex="1"
+        GridPane.columnSpan="1">
         
         <fx:include source="buttons.fxml"/>
         

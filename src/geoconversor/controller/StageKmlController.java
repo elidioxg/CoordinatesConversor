@@ -47,26 +47,30 @@ public class StageKmlController implements Initializable {
 
         if (file != null) {
             tfFilename.setText(file.getAbsolutePath());
-        }
-        Stage stage = (Stage) tfFilename.getScene().getWindow();
-        stage.close();
+        }                
     }
 
     @FXML
     protected Button bExport, bClose;
-    
-    @FXML 
-    protected void exportKml(){
+
+    @FXML
+    protected void exportKml() {
         String filename = tfFilename.getCharacters().toString();
-        KmlExport.kmlPointLayer(filename, GeoConversor.getInstance().getList());
+        if (filename != null) {
+            KmlExport.kmlPointLayer(filename, GeoConversor.getInstance().getList());
+        } else {
+            //TODO: show message dialog
+        }
+        Stage stage = (Stage) bExport.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    protected void closeStage(){
+    protected void closeStage() {
         Stage stage = (Stage) bClose.getScene().getWindow();
         stage.close();
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

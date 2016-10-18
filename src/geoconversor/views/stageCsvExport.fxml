@@ -5,6 +5,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.*?>
 
 <GridPane 
     id="AnchorPane" 
@@ -12,6 +13,10 @@
     prefWidth="350.0" 
     xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="geoconversor.controller.StageCsvController">
+    
+    <stylesheets>
+        <URL value="@AppStyleSheet.css" />
+    </stylesheets> 
     
     <Label 
         GridPane.columnIndex="0"
@@ -21,13 +26,15 @@
     <TextField 
         fx:id="tfFilename"
         GridPane.columnIndex="1"
-        GridPane.rowIndex="0">    
+        GridPane.rowIndex="0"
+        editable="false" >    
     </TextField>
     <Button 
         GridPane.columnIndex="2"
         GridPane.rowIndex="0"
         fx:id="bFilename"
         onAction="#setFilename" 
+        text="Change"
     >
     </Button>
     
@@ -37,8 +44,10 @@
         text="Separator">
     </Label>
     <TextField 
+        fx:id="tfSep"
         GridPane.columnIndex="1"
-        GridPane.rowIndex="1">
+        GridPane.rowIndex="1"
+        text=",">
     </TextField>
     
     <ButtonBar 
@@ -48,7 +57,7 @@
         <buttons>
             <Button 
                 fx:id="bExport"
-                text="Save"
+                text="Export"
                 onAction="#exportCSV" >
             </Button> 
             <Button 

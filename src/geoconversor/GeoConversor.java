@@ -42,7 +42,7 @@ import javafx.util.Callback;
 public class GeoConversor extends Application {    
     private GridPane grid;
     private ListView lvPoints;
-    private ArrayList list = new ArrayList();
+    private ArrayList<PointModel> list = new ArrayList();
     private static GeoConversor instance;    
     private static final String AppTitle = "GeoConversor";
     
@@ -50,7 +50,7 @@ public class GeoConversor extends Application {
      * Return the objects in the ListView
      * @return 
      */
-    public ArrayList getList(){
+    public ArrayList<PointModel> getList(){
         return list;
     }
     

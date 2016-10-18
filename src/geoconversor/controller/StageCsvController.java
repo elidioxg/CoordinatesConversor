@@ -32,44 +32,54 @@ import javafx.stage.Stage;
  *
  * @author elidioxg
  */
-public class StageCsvController implements Initializable{
+public class StageCsvController implements Initializable {
 
     @FXML
     protected TextField tfFilename;
-    
+
     @FXML
-    protected void setFilename(){
+    protected void setFilename() {
         FileChooser fc = new FileChooser();
-        FileChooser.ExtensionFilter extFilter = 
-                new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+        FileChooser.ExtensionFilter extFilter
+                = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
         fc.getExtensionFilters().add(extFilter);
         File file = fc.showSaveDialog(null);
-        
-        if(file!=null){
-            tfFilename.setText(file.getAbsolutePath());            
-        }    
-        Stage stage = (Stage) tfFilename.getScene().getWindow();
+
+        if (file != null) {
+            tfFilename.setText(file.getAbsolutePath());
+        }
+    }
+
+    @FXML
+    protected Button bExport, bClose;
+
+    @FXML
+    protected TextField tfSep;
+
+    @FXML
+    protected void exportCSV() {
+        String filename = tfFilename.getCharacters().toString();
+        if (filename != null) {
+            String sep = tfSep.getCharacters().toString();
+            if (sep != null) {
+                CsvExport.csvLayer(filename, sep, GeoConversor.getInstance().getList());
+            }
+        } else {
+            //TODO: show message dialog
+        }
+        Stage stage = (Stage) bExport.getScene().getWindow();
         stage.close();
     }
-    
-    @FXML 
-    protected Button bExport, bClose;
-    
+
     @FXML
-    protected void exportCSV(){
-        String filename = tfFilename.getCharacters().toString();
-        CsvExport.csvLayer(filename, ",", GeoConversor.getInstance().getList());
-    }
-    
-    @FXML
-    protected void closeStage(){
+    protected void closeStage() {
         Stage stage = (Stage) bClose.getScene().getWindow();
         stage.close();
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
-    }    
-    
+
+    }
+
 }

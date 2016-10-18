@@ -8,11 +8,8 @@
 <?import javafx.scene.layout.*?>
 
 
-            
-           
-
 <TabPane 
-    prefHeight="500.0" 
+    prefHeight="300.0" 
     prefWidth="300.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 

@@ -30,10 +30,11 @@ import java.util.ArrayList;
 public class CsvExport {
 
     /**
-     *
+     * Export the points to text file with values separated by a character
+     * 
      * @param filename
      * @param sep
-     * @param pm
+     * @param points
      */
     public static void csvLayer(String filename, String sep,
             ArrayList<PointModel> points) {
@@ -43,6 +44,7 @@ public class CsvExport {
             BufferedWriter bw = new BufferedWriter(pw);
             bw.write("name, latitude, longitude, altitude, date, sector, north, east, "
                     + "description");
+            bw.newLine();
             if (points != null) {
                 for (int i = 0; i < points.size(); i++) {
                     bw.write(points.get(i).getName() + sep);

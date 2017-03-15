@@ -7,10 +7,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox
+<HBox
     id="vboxpane" 
-    prefHeight="500.0" 
-    prefWidth="200.0" 
+    prefHeight="60.0" 
+    prefWidth="300.0" 
     styleClass="mainFxmlClass" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.AppController">
@@ -19,34 +19,39 @@
         <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
-    <Button 
-        fx:id="bConvertStage"
-        onAction="#openConvertStage"
-        text="Convert Coordinates" 
-        minWidth="200" >
-    </Button>        
+    <ButtonBar
+    >
+        <buttons>
+            <Button 
+                fx:id="bConvertStage"
+                onAction="#openConvertStage"
+                text="Convert" 
+                prefWidth="50"
+                prefHeight="50">
+            </Button>        
             
-    <Button 
-        fx:id="bCsvStage"
-        onAction="#openStageCsv" 
-        text="Export to CSV"
-        minWidth="200">
-    </Button> 
-    <Button                 
-        onAction="#openStageKml" 
-        text="Export to KML"
-        minWidth="200">
-    </Button>
-    <Button 
-        text="Delete from list"
-        onAction="#deleteFromList"
-        minWidth="200">
-    </Button>    
-    <Button
-        fx:id="bExit"
-        text="Quit program"
-        onAction="#exit"
-        minWidth="200">
-    </Button>
+            <Button 
+                fx:id="bCsvStage"
+                onAction="#openStageCsv" 
+                text="CSV"
+                prefWidth="50"
+                prefHeight="50">
+            </Button> 
+            <Button                 
+                onAction="#openStageKml" 
+                text="KML"
+                prefWidth="50"
+                prefHeight="50">
+            </Button>
+            <Button 
+                text="Delete"
+                onAction="#deleteFromList"
+                prefWidth="50"
+                prefHeight="50">
+            </Button>
+           
+        </buttons>
+        
+    </ButtonBar>       
     
-</VBox>
+</HBox>

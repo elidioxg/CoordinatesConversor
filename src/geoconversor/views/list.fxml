@@ -6,16 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane 
-    id="AnchorPane" 
+<GridPane 
+    id="Pane" 
     prefHeight="300.0" 
     prefWidth="300.0" 
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.AppController">
     
-    <ListView 
-        >
-        
-    </ListView> 
+    <rowConstraints >
+        <RowConstraints percentHeight="80"></RowConstraints>
+        <RowConstraints percentHeight="20"></RowConstraints>
+    </rowConstraints>
     
-</AnchorPane>
+    <columnConstraints >
+        <ColumnConstraints percentWidth="100"></ColumnConstraints>
+    </columnConstraints>
+      
+</GridPane>

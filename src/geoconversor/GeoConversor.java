@@ -67,8 +67,10 @@ public class GeoConversor extends Application {
         grid = loader.load();   
         
         AppController controller = loader.getController();
+       
         
-        lvPoints = new ListView();         
+        
+        lvPoints = new ListView();
         lvPoints.setCellFactory(new Callback<ListView<PointModel>, ListCell<PointModel>>(){
             @Override
             public ListCell<PointModel> call(ListView<PointModel> param) {
@@ -97,9 +99,8 @@ public class GeoConversor extends Application {
         
         });
         
-        grid.add(lvPoints, 1, 1);
-        
         Scene scene = new Scene(grid);
+        grid.add(lvPoints, 0, 1);
         
         primaryStage.setTitle(AppTitle);
         primaryStage.setScene(scene);

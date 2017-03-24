@@ -35,9 +35,13 @@
                     <MenuItem id="menuExit" text="Exit" />                                     
                 </items>
             </Menu>
-            <Menu 
-                text="Convert Coordinates"
-                onAction="#openConvertStage">                
+            <Menu text="Convert">
+                <items>
+                    <MenuItem 
+                        text="Coordinates"
+                        onAction="#openConvertStage">                        
+                    </MenuItem>
+                </items>                              
             </Menu>
         </menus>
     </MenuBar>

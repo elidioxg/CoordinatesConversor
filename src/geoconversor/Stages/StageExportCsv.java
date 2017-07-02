@@ -17,8 +17,6 @@
 package geoconversor.Stages;
 
 import geoconversor.GeoConversor;
-import geoconversor.Models.PointModel;
-import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -34,7 +32,7 @@ public class StageExportCsv {
      * 
      * @param points 
      */
-    public void createStage() {
+    public void createStage() {        
         try {
             FXMLLoader loader = new FXMLLoader(
                     GeoConversor.class.getResource("views/stageCsvExport.fxml"));

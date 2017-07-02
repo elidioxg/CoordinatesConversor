@@ -62,7 +62,10 @@
         GridPane.rowSpan="3"> 
         
         <content >            
-            <fx:include source="properties.fxml"/>
+            <fx:include 
+                GridPane.columnIndex="1" 
+                GridPane.rowIndex="1"
+                source="properties.fxml"/>
         </content>
 
     </ScrollPane>          

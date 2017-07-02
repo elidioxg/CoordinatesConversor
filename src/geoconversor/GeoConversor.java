@@ -66,9 +66,7 @@ public class GeoConversor extends Application {
                 getClass().getResource("views/main.fxml"));
         grid = loader.load();   
         
-        AppController controller = loader.getController();
-       
-        
+        AppController controller = loader.getController();               
         
         lvPoints = new ListView();
         lvPoints.setCellFactory(new Callback<ListView<PointModel>, ListCell<PointModel>>(){
@@ -122,6 +120,12 @@ public class GeoConversor extends Application {
         lNorth.setText(pm.getNorth());
         Label lEast = (Label) grid.lookup("#in_east");
         lEast.setText(pm.getEast());
+        Label lLatDms = (Label) grid.lookup("#in_latdms");
+        lLatDms.setText(pm.getLatDms());
+        Label lLonDms = (Label) grid.lookup("#in_londms");
+        lLonDms.setText(pm.getLonDms());
+        Label lDesc = (Label) grid.lookup("#in_desc");
+        lDesc.setText(pm.getDescription());
     }
     
     /**

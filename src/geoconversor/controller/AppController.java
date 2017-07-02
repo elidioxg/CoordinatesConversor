@@ -33,7 +33,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -78,7 +77,7 @@ public class AppController implements Initializable{
         pm.setSector(taSector.getText());
         pm.setNorth(taNorth.getText());
         pm.setEast(taEast.getText());
-        pm.setTime(GetTime.getTimeFmt());
+        pm.setTime(taDate.getText());        
         GeoConversor.getInstance().addToList(pm);
         Stage stage = (Stage) bAddToList.getScene().getWindow();
         stage.close();

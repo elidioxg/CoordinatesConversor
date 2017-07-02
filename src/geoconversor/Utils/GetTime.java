@@ -27,7 +27,7 @@ import java.util.Date;
 public class GetTime {
     
     public static String getTimeFmt(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         return(dateFormat.format(date));
     }

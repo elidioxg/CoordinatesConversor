@@ -11,7 +11,7 @@
     xmlns:fx="http://javafx.com/fxml/1" 
     id="grid" 
     prefHeight="400.0" 
-    prefWidth="300.0" 
+    prefWidth="400.0" 
     fx:controller="geoconversor.controller.AppController"
 >
     
@@ -108,6 +108,11 @@
         GridPane.rowIndex="10"  
         text="Description:"
         />
-    
+    <Label
+        fx:id="in_desc"
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="11"
+        text="">
+    </Label>            
         
 </GridPane>

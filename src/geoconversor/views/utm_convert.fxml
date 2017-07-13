@@ -15,7 +15,7 @@
     xmlns:fx="http://javafx.com/fxml/1" 
     fx:controller="geoconversor.controller.Utm_convertController">
     <stylesheets>
-        <URL value="@ConverterStyle.css"/>
+        <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
     <VBox 

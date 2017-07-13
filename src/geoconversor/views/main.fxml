@@ -10,7 +10,7 @@
 <GridPane
     xmlns:fx="http://javafx.com/fxml/1"
     id="grid"
-    prefHeight="500.0"
+    prefHeight="400.0"
     prefWidth="800"
     fx:controller="geoconversor.controller.AppController"
 >
@@ -22,6 +22,11 @@
         <ColumnConstraints percentWidth="50"></ColumnConstraints> 
         <ColumnConstraints percentWidth="50"></ColumnConstraints>        
     </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="5"></RowConstraints>
+        <RowConstraints percentHeight="80"></RowConstraints>        
+        <RowConstraints percentHeight="15"></RowConstraints>
+    </rowConstraints>
     
     <MenuBar 
         GridPane.columnIndex="0"
@@ -32,7 +37,9 @@
         <menus>
             <Menu text="File">
                 <items>               
-                    <MenuItem id="menuExit" text="Exit" />                                     
+                    <MenuItem 
+                        text="Exit"
+                        onAction="#exit"/>                                     
                 </items>
             </Menu>
             <Menu text="Convert">
@@ -50,21 +57,21 @@
     <fx:include 
         GridPane.columnIndex="0" 
         GridPane.rowIndex="1"
+        GridPane.rowSpan="1"
         source="list.fxml"/>
     <fx:include 
         GridPane.columnIndex="0" 
+        GridPane.columnSpan="2"
         GridPane.rowIndex="2"
         source="buttons.fxml"/> 
     
     <ScrollPane 
         GridPane.columnIndex="1" 
         GridPane.rowIndex="1"
-        GridPane.rowSpan="3"> 
+        GridPane.rowSpan="1"> 
         
         <content >            
-            <fx:include 
-                GridPane.columnIndex="1" 
-                GridPane.rowIndex="1"
+            <fx:include                                 
                 source="properties.fxml"/>
         </content>
 

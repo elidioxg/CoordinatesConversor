@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <HBox
-    id="vboxpane" 
+    id="vbox" 
     prefHeight="60.0" 
     prefWidth="300.0" 
     styleClass="mainFxmlClass" 
@@ -25,28 +25,28 @@
             <Button 
                 fx:id="bConvertStage"
                 onAction="#openConvertStage"
-                text="Convert" 
-                prefWidth="50"
+                text="Convert Coordinates" 
+                prefWidth="90"
                 prefHeight="50">
             </Button>        
             
             <Button 
                 fx:id="bCsvStage"
                 onAction="#openStageCsv" 
-                text="CSV"
-                prefWidth="50"
+                text="Export to CSV"
+                prefWidth="90"
                 prefHeight="50">
             </Button> 
             <Button                 
                 onAction="#openStageKml" 
-                text="KML"
-                prefWidth="50"
+                text="Export to KML"
+                prefWidth="90"
                 prefHeight="50">
             </Button>
             <Button 
                 text="Delete"
                 onAction="#deleteFromList"
-                prefWidth="50"
+                prefWidth="90"
                 prefHeight="50">
             </Button>
            

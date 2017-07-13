@@ -126,6 +126,8 @@ public class GeoConversor extends Application {
         lLonDms.setText(pm.getLonDms());
         Label lDesc = (Label) grid.lookup("#in_desc");
         lDesc.setText(pm.getDescription());
+        Label lDate = (Label) grid.lookup("#in_date");
+        lDate.setText(pm.getTime());
     }
     
     /**
@@ -141,7 +143,7 @@ public class GeoConversor extends Application {
     public void deleteFromList(){        
         if(lvPoints.getSelectionModel().getSelectedIndex()>=0){
             int index = lvPoints.getSelectionModel().getSelectedIndex();
-            lvPoints.getItems().remove(index);                
+            lvPoints.getItems().remove(index);            
             list.remove(index);           
         }
     }

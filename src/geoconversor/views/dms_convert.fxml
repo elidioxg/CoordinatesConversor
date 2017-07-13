@@ -16,13 +16,14 @@
     fx:controller="geoconversor.controller.Dms_convertController">
     
     <stylesheets>
-        <URL value="@ConverterStyle.css"/>
+        <URL value="@AppStyleSheet.css"/>
     </stylesheets>
     
     <VBox
         id="vbox"    >
         
-        <HBox >
+        <HBox 
+            id="hbox">
             <Label text="Latitude"/>
             <fx:define>
                 <ToggleGroup fx:id="groupLatitude"/>
@@ -40,7 +41,8 @@
                 
             </RadioButton>
         </HBox>        
-        <HBox >        
+        <HBox 
+            id="hbox">        
             <TextField
                 fx:id="tfLatDeg"
                 prefWidth="60" />
@@ -54,7 +56,8 @@
                 prefWidth="60"/>
             <Label text="''"/>
         </HBox>
-        <HBox >
+        <HBox 
+            id="hbox">
             <Label text="Longitude"/>
             <fx:define>
                 <ToggleGroup fx:id="groupLongitude"/>
@@ -72,7 +75,8 @@
                 
             </RadioButton>
         </HBox>        
-        <HBox >           
+        <HBox 
+            id="hbox">           
             <TextField
                 fx:id="tfLonDeg"
                 prefWidth="60"/>

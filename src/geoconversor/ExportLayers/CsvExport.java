@@ -51,7 +51,7 @@ public class CsvExport {
                     bw.write(points.get(i).getLatitude() + sep);
                     bw.write(points.get(i).getLongitude() + sep);
                     bw.write(points.get(i).getAltitude() + sep);
-                    bw.write(points.get(i).getData() + sep);
+                    bw.write(points.get(i).getTime() + sep);
                     bw.write(points.get(i).getSector() + sep);
                     bw.write(points.get(i).getNorth() + sep);
                     bw.write(points.get(i).getEast() + sep);

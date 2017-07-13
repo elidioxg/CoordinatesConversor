@@ -30,7 +30,8 @@ public class Convert {
      * @param deg Latitude or Longitude in decimal degrees
      * @return 
      */
-    public static String[] convert(String deg){        
+    public static String[] convert(String deg){   
+        deg = deg.replace(",", ".");
         Double degrees = Double.parseDouble(deg);
         DMSConversion conversion = new DMSConversion();
         String dms = conversion.convertFromDegrees(degrees);

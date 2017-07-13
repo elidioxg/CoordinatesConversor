@@ -27,9 +27,9 @@ import geoconversor.Models.PointModel;
 import geoconversor.Stages.StageConvert;
 import geoconversor.Stages.StageExportCsv;
 import geoconversor.Stages.StageExportKml;
-import geoconversor.Utils.GetTime;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -43,11 +43,9 @@ public class AppController implements Initializable{
         StageConvert stage = new StageConvert();
         stage.createStage();    
     }
-    
-    @FXML protected Button bExit;
+        
     @FXML protected void exit(){
-        Stage stage = (Stage) bExit.getScene().getWindow();
-        stage.close();
+        Platform.exit();
     }
     
     @FXML 
@@ -62,7 +60,7 @@ public class AppController implements Initializable{
      * This handle the action for "Button Add Point"
      */
     @FXML
-    protected void setPointProperties(){
+    protected void addToList(){
         PointModel pm = new PointModel();
         String name;
         if(taName.getText().trim().isEmpty()){
@@ -103,7 +101,7 @@ public class AppController implements Initializable{
         taLonDeg.setText(lon[0]);
         taLonMin.setText(lon[1]);
         taLonSeg.setText(lon[2]);
-        taDate.setText(GetTime.getTimeFmt());
+        taDate.setText(point.getTime());
     }
     
     @FXML

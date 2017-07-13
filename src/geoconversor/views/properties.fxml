@@ -10,13 +10,19 @@
 <GridPane 
     xmlns:fx="http://javafx.com/fxml/1" 
     id="grid" 
-    prefHeight="400.0" 
+    prefHeight="300.0" 
     prefWidth="400.0" 
     fx:controller="geoconversor.controller.AppController"
 >
+    <columnConstraints>
+        <ColumnConstraints percentWidth="25"></ColumnConstraints>
+        <ColumnConstraints percentWidth="25"></ColumnConstraints>
+        <ColumnConstraints percentWidth="25"></ColumnConstraints>
+        <ColumnConstraints percentWidth="25"></ColumnConstraints>
+    </columnConstraints>
     
     <stylesheets>
-        <URL value="@PropertiesStyle.css" />
+        <URL value="@AppStyleSheet.css" />
     </stylesheets> 
    
     <Label 
@@ -111,8 +117,24 @@
     <Label
         fx:id="in_desc"
         GridPane.columnIndex="0"
+        GridPane.columnSpan="4"
         GridPane.rowIndex="11"
+        GridPane.rowSpan="2"
         text="">
     </Label>            
+    
+    <Label
+        GridPane.columnIndex="0"
+        GridPane.rowIndex="12"
+        text="Date - Time">
+    </Label>
+    <Label
+        fx:id="in_date"
+        GridPane.columnIndex="1"
+        GridPane.columnSpan="3"
+        GridPane.rowIndex="12"
+        text="">
+        
+    </Label>
         
 </GridPane>

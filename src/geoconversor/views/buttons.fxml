@@ -26,7 +26,7 @@
                 fx:id="bConvertStage"
                 onAction="#openConvertStage"
                 text="Convert Coordinates" 
-                prefWidth="90"
+                prefWidth="150"
                 prefHeight="50">
             </Button>        
             
@@ -34,19 +34,19 @@
                 fx:id="bCsvStage"
                 onAction="#openStageCsv" 
                 text="Export to CSV"
-                prefWidth="90"
+                prefWidth="150"
                 prefHeight="50">
             </Button> 
             <Button                 
                 onAction="#openStageKml" 
                 text="Export to KML"
-                prefWidth="90"
+                prefWidth="150"
                 prefHeight="50">
             </Button>
             <Button 
                 text="Delete"
                 onAction="#deleteFromList"
-                prefWidth="90"
+                prefWidth="150"
                 prefHeight="50">
             </Button>
            
